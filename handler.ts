@@ -1,12 +1,18 @@
-import { APIGatewayProxyHandler } from 'aws-lambda';
-import 'source-map-support/register';
+import { APIGatewayEvent, Context, Handler } from "aws-lambda";
+import "source-map-support/register";
 
-export const hello: APIGatewayProxyHandler = async (event, _context) => {
+export const hello: Handler = async (
+  event: APIGatewayEvent,
+  _context: Context
+) => {
   return {
     statusCode: 200,
-    body: JSON.stringify({
-      message: 'Go Serverless Webpack (Typescript) v1.0! Your function executed successfully!',
-      input: event,
-    }, null, 2),
+    body: JSON.stringify(
+      {
+        message: "Hello serverless ts champ!",
+      },
+      null,
+      2
+    ),
   };
-}
+};
