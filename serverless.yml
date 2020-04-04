@@ -24,3 +24,9 @@ functions:
       - http:
           method: get
           path: hello
+  echo:
+    handler: handler.echo
+    events:
+      - http:
+          method: post
+          path: echo

@@ -16,3 +16,22 @@ export const hello: Handler = async (
     ),
   };
 };
+
+export const echo: Handler = async (
+  event: APIGatewayEvent,
+  _context: Context
+) => {
+  const requestBody = JSON.parse(event.body);
+  const name = requestBody.name;
+  const age = requestBody.age;
+  return {
+    statusCode: 200,
+    body: JSON.stringify(
+      {
+        message: `Name: ${name}, Age: ${age}`,
+      },
+      null,
+      2
+    ),
+  };
+};
