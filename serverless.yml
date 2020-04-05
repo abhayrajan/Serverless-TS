@@ -1,13 +1,13 @@
 service:
   name: serverless-ts
 
+plugins:
+  - serverless-webpack
+
 custom:
   webpack:
     webpackConfig: ./webpack.config.js
     includeModules: true
-
-plugins:
-  - serverless-webpack
 
 provider:
   name: aws

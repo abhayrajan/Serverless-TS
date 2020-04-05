@@ -28,7 +28,7 @@ export const echo: Handler = async (
     statusCode: 200,
     body: JSON.stringify(
       {
-        message: `Name: ${name}, Age: ${age}`,
+        message: `Name: ${name} and Age: ${age}`,
       },
       null,
       2
